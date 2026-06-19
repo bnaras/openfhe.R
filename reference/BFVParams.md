@@ -4,8 +4,7 @@ Constructor for the BFV scheme's `CCParams` surface. Every argument maps
 1:1 to an upstream `CCParams<CryptoContextBFVRNS>::Set*` method whose
 override is *not* disabled in the BFV specialization. The 13 setters
 that BFV explicitly disables (`SetScalingTechnique`, `SetFirstModSize`,
-`SetPRENumHops`, `SetExecutionMode`, …) are not exposed here; see
-discovery D013.
+`SetPRENumHops`, `SetExecutionMode`, …) are not exposed here.
 
 ## Usage
 
@@ -150,33 +149,30 @@ BFVParams(
 
 - max_relin_sk_deg:
 
-  `parity-deferred:` maximum degree of the secret key that can be
-  relinearized. Upstream default is 2. No current vignette or Python
-  example exercises this; the cpp11 binding is in place so a later
-  release can promote it without a recompile.
+  maximum degree of the secret key that can be relinearized. Upstream
+  default is 2. No current vignette or Python example exercises this;
+  the cpp11 binding is in place so a later release can promote it
+  without a recompile.
 
 - pre_mode:
 
-  `parity-deferred:` proxy re-encryption mode (`PREMode$NOT_SET`,
-  `INDCPA`, `FIXED_NOISE_HRA`, `NOISE_FLOODING_HRA`). Only meaningful if
-  the `PRE` feature is enabled on the context. No current vignette uses
-  PRE.
+  proxy re-encryption mode (`PREMode$NOT_SET`, `INDCPA`,
+  `FIXED_NOISE_HRA`, `NOISE_FLOODING_HRA`). Only meaningful if the `PRE`
+  feature is enabled on the context. No current vignette uses PRE.
 
 - eval_add_count:
 
-  `parity-deferred:` upstream noise-budget hint: maximum additions
-  between multiplications. Used only by the noise-flooding path. Default
-  0.
+  upstream noise-budget hint: maximum additions between multiplications.
+  Used only by the noise-flooding path. Default 0.
 
 - key_switch_count:
 
-  `parity-deferred:` upstream noise-budget hint: maximum key-switch
-  count. Default 0.
+  upstream noise-budget hint: maximum key-switch count. Default 0.
 
 - encryption_technique:
 
-  `parity-deferred:` BFV-specific encryption variant
-  (`EncryptionTechnique$STANDARD` or `EXTENDED`). Default STANDARD.
+  BFV-specific encryption variant (`EncryptionTechnique$STANDARD` or
+  `EXTENDED`). Default STANDARD.
 
 ## Value
 

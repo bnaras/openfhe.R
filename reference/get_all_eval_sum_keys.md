@@ -4,8 +4,8 @@ Reads the entire `CryptoContextImpl` internal EvalSum key map.
 Structurally identical to
 [`get_all_eval_automorphism_keys()`](https://bnaras.github.io/openfhe.R/reference/get_all_eval_automorphism_keys.md):
 both share backing storage on the C++ side, but the two accessors are
-exposed separately so that fixture authors can match whichever OpenFHE
-doc they are reading.
+exposed separately so callers can match whichever OpenFHE doc they are
+reading.
 
 ## Usage
 

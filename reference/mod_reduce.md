@@ -4,8 +4,8 @@ Synonym for
 [`rescale()`](https://bnaras.github.io/openfhe.R/reference/rescale.md).
 Both names dispatch to the same C++ operation
 (`CryptoContextImpl::Rescale` delegates to `ModReduce` internally); the
-R binding keeps both so fixture and vignette authors can use whichever
-name matches the OpenFHE documentation they're following.
+R binding keeps both so callers can use whichever name matches the
+OpenFHE documentation they're following.
 
 ## Usage
 

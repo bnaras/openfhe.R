@@ -40,7 +40,7 @@ On the C++ side this is equivalent to calling
 `EvalAutomorphismKeyGen(sk, indices)` which internally calls
 `CryptoContextImpl::InsertEvalAutomorphismKey` with the generated map
 (cryptocontext.h line 2237). The dual return / registry-insert pattern
-matches the openfhe-python behavior at the equivalent entry point.
+mirrors the equivalent C++ entry point.
 
 Companion to
 [`eval_rotate_key_gen()`](https://bnaras.github.io/openfhe.R/reference/eval_rotate_key_gen.md)

@@ -3,8 +3,7 @@
 The `EvalAtIndex` flavor of
 [`multi_eval_automorphism_key_gen()`](https://bnaras.github.io/openfhe.R/reference/multi_eval_automorphism_key_gen.md);
 takes signed rotation indices rather than automorphism indices.
-Semantically equivalent but lives on a distinct C++ entry point,
-matching the openfhe-python surface.
+Semantically equivalent but lives on a distinct C++ entry point.
 
 ## Usage
 

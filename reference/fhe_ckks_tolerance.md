@@ -40,8 +40,8 @@ or as `atol` in a manual diff.
 Two dispatch forms:
 
 - **Stage 1 (numeric)**: pass parameters as direct arguments. Useful
-  when the ciphertext isn't yet constructed — e.g. in a fixture setup
-  block that has to produce a tolerance before calling
+  when the ciphertext isn't yet constructed — e.g. when you need a
+  tolerance before calling
   [`encrypt()`](https://bnaras.github.io/openfhe.R/reference/encrypt.md).
 
 - **Stage 2 (Ciphertext)**: pass a `Ciphertext` directly. The helper

@@ -130,8 +130,8 @@ unused — all getters take only <code>params</code>).</p></dd>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>Per discovery D013, several parameters are "disabled" on specific
-schemes (their setters throw at runtime). For a disabled
+    <p>Several parameters are "disabled" on specific schemes (their
+setters throw at runtime). For a disabled
 scheme/parameter combination the getter returns the default value
 of the underlying field (typically <code>0L</code> for <code>uint32_t</code>, <code>0</code> for
 <code>double</code>, or the enum's zero sentinel) rather than throwing. This
@@ -156,7 +156,7 @@ and BGV plaintext spaces. BFV/BGV plaintexts are elements of
 <code>Z_t[x]/Phi_m(x)</code> and every homomorphic operation is performed
 modulo <code>t</code>. On a <code>CKKSParams</code> object this returns the default
 field value (<code>0</code>) because CKKS does not use a plaintext
-modulus — see discovery D013.</p></li>
+modulus.</p></li>
 <li><p><code>get_digit_size</code>: Digit size <code>r</code> for BV key-switching:
 the base-<code>2^r</code> digit decomposition of the ciphertext during a
 key-switch. Larger values decrease the number of digit
@@ -166,65 +166,65 @@ CKKS <code>COMPOSITESCALINGAUTO</code>/<code>COMPOSITESCALINGMANUAL</code> scali
 techniques. Only meaningful when
 <code>scaling_technique = ScalingTechnique$COMPOSITESCALING*</code>;
 <code>0</code> under the default FLEXIBLEAUTO path.</p></li>
-<li><p><code>get_scheme</code>: <code>parity-deferred:</code> integer scheme
+<li><p><code>get_scheme</code>: integer scheme
 identifier (see <code>SchemeId</code> for the enum values).</p></li>
-<li><p><code>get_standard_deviation</code>: <code>parity-deferred:</code> standard deviation
+<li><p><code>get_standard_deviation</code>: standard deviation
 of the Gaussian error distribution.</p></li>
-<li><p><code>get_secret_key_dist</code>: <code>parity-deferred:</code> secret-key
+<li><p><code>get_secret_key_dist</code>: secret-key
 distribution (see <code>SecretKeyDist</code>).</p></li>
-<li><p><code>get_max_relin_sk_deg</code>: <code>parity-deferred:</code> maximum
+<li><p><code>get_max_relin_sk_deg</code>: maximum
 relinearization secret-key degree.</p></li>
-<li><p><code>get_pre_mode</code>: <code>parity-deferred:</code> proxy
+<li><p><code>get_pre_mode</code>: proxy
 re-encryption mode (see <code>PREMode</code>).</p></li>
-<li><p><code>get_multiparty_mode</code>: <code>parity-deferred:</code> multiparty mode
+<li><p><code>get_multiparty_mode</code>: multiparty mode
 (see <code>MultipartyMode</code>).</p></li>
-<li><p><code>get_execution_mode</code>: <code>parity-deferred:</code> execution mode
+<li><p><code>get_execution_mode</code>: execution mode
 (see <code>ExecutionMode</code>).</p></li>
-<li><p><code>get_decryption_noise_mode</code>: <code>parity-deferred:</code> decryption noise
+<li><p><code>get_decryption_noise_mode</code>: decryption noise
 mode (see <code>DecryptionNoiseMode</code>).</p></li>
-<li><p><code>get_noise_estimate</code>: <code>parity-deferred:</code> noise-flooding
+<li><p><code>get_noise_estimate</code>: noise-flooding
 noise estimate (double).</p></li>
-<li><p><code>get_desired_precision</code>: <code>parity-deferred:</code> noise-flooding
+<li><p><code>get_desired_precision</code>: noise-flooding
 target precision (double, bits).</p></li>
-<li><p><code>get_statistical_security</code>: <code>parity-deferred:</code> statistical
+<li><p><code>get_statistical_security</code>: statistical
 security parameter. Return type is <code>double</code> per header
 inconsistency; see the Return-type note.</p></li>
-<li><p><code>get_num_adversarial_queries</code>: <code>parity-deferred:</code> upper bound on
+<li><p><code>get_num_adversarial_queries</code>: upper bound on
 adversarial queries. Return type is <code>double</code> per header
 inconsistency; see the Return-type note.</p></li>
-<li><p><code>get_threshold_num_of_parties</code>: <code>parity-deferred:</code> threshold-FHE
+<li><p><code>get_threshold_num_of_parties</code>: threshold-FHE
 party count.</p></li>
-<li><p><code>get_key_switch_technique</code>: <code>parity-deferred:</code> key-switching
+<li><p><code>get_key_switch_technique</code>: key-switching
 technique (see <code>KeySwitchTechnique</code>).</p></li>
-<li><p><code>get_scaling_technique</code>: <code>parity-deferred:</code> scaling technique
+<li><p><code>get_scaling_technique</code>: scaling technique
 (see <code>ScalingTechnique</code>).</p></li>
-<li><p><code>get_batch_size</code>: <code>parity-deferred:</code> SIMD batch size.</p></li>
-<li><p><code>get_first_mod_size</code>: <code>parity-deferred:</code> bit size of the
+<li><p><code>get_batch_size</code>: SIMD batch size.</p></li>
+<li><p><code>get_first_mod_size</code>: bit size of the
 first (largest) prime in the CKKS modulus chain.</p></li>
-<li><p><code>get_num_large_digits</code>: <code>parity-deferred:</code> number of large
+<li><p><code>get_num_large_digits</code>: number of large
 digits for HYBRID key switching.</p></li>
-<li><p><code>get_multiplicative_depth</code>: <code>parity-deferred:</code> configured
+<li><p><code>get_multiplicative_depth</code>: configured
 multiplicative depth. Note: this is the depth the context was
 constructed to support, not the current depth budget after
 operations.</p></li>
-<li><p><code>get_scaling_mod_size</code>: <code>parity-deferred:</code> bit size of each
+<li><p><code>get_scaling_mod_size</code>: bit size of each
 CKKS scaling modulus.</p></li>
-<li><p><code>get_security_level</code>: <code>parity-deferred:</code> target security
+<li><p><code>get_security_level</code>: target security
 level (see <code>SecurityLevel</code>).</p></li>
-<li><p><code>get_eval_add_count</code>: <code>parity-deferred:</code> BFV/BGV
+<li><p><code>get_eval_add_count</code>: BFV/BGV
 noise-flooding hint: maximum additions between multiplications.</p></li>
-<li><p><code>get_key_switch_count</code>: <code>parity-deferred:</code> BFV/BGV
+<li><p><code>get_key_switch_count</code>: BFV/BGV
 noise-flooding hint: maximum key-switch count.</p></li>
-<li><p><code>get_encryption_technique</code>: <code>parity-deferred:</code> BFV encryption
+<li><p><code>get_encryption_technique</code>: BFV encryption
 technique (see <code>EncryptionTechnique</code>).</p></li>
-<li><p><code>get_multiplication_technique</code>: <code>parity-deferred:</code> BFV multiplication
+<li><p><code>get_multiplication_technique</code>: BFV multiplication
 technique (see <code>MultiplicationTechnique</code>).</p></li>
-<li><p><code>get_pre_num_hops</code>: <code>parity-deferred:</code> PRE hop count.</p></li>
-<li><p><code>get_interactive_boot_compression_level</code>: <code>parity-deferred:</code> CKKS interactive
+<li><p><code>get_pre_num_hops</code>: PRE hop count.</p></li>
+<li><p><code>get_interactive_boot_compression_level</code>: CKKS interactive
 bootstrap compression level (see <code>CompressionLevel</code>).</p></li>
-<li><p><code>get_register_word_size</code>: <code>parity-deferred:</code> register word size
+<li><p><code>get_register_word_size</code>: register word size
 for multi-precision arithmetic.</p></li>
-<li><p><code>get_ckks_data_type</code>: <code>parity-deferred:</code> CKKS data type
+<li><p><code>get_ckks_data_type</code>: CKKS data type
 (see <code>CKKSDataType</code>).</p></li>
 </ul></div>
     <div class="section level2">
@@ -240,8 +240,7 @@ header, not per the setter signature.</p>
 <p><code>get_plaintext_modulus</code> returns an R <code>integer</code> on 32-bit-safe
 values; for moduli that exceed the 32-bit signed integer range
 the return value is a <code>numeric</code> (double) carrying a losslessly
-rounded 53-bit integer, per the <code>design.md</code> §7 return-type
-convention.</p>
+rounded 53-bit integer.</p>
     </div>
 
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

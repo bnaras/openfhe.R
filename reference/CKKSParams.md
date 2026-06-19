@@ -5,11 +5,10 @@ maps 1:1 to an enabled `CCParams<CryptoContextCKKSRNS>::Set*` method.
 The 8 CKKS-disabled setters (`SetPlaintextModulus`, `SetEvalAddCount`,
 `SetKeySwitchCount`, `SetEncryptionTechnique`,
 `SetMultiplicationTechnique`, `SetPRENumHops`, `SetMultipartyMode`,
-`SetThresholdNumOfParties`) are not exposed; see discovery D013. CKKS is
-a fixed-point scheme over the complex numbers and has no plaintext
-modulus; `threshold_num_of_parties` is currently CKKS-disabled upstream
-even though the scheme supports threshold variants via a separate code
-path.
+`SetThresholdNumOfParties`) are not exposed. CKKS is a fixed-point
+scheme over the complex numbers and has no plaintext modulus;
+`threshold_num_of_parties` is currently CKKS-disabled upstream even
+though the scheme supports threshold variants via a separate code path.
 
 ## Usage
 
@@ -120,46 +119,44 @@ CKKSParams(
 
 - max_relin_sk_deg:
 
-  `parity-deferred:` see the BFV entry.
+  see the BFV entry.
 
 - pre_mode:
 
-  `parity-deferred:` see the BFV entry.
+  see the BFV entry.
 
 - execution_mode:
 
-  `parity-deferred:` one of `ExecutionMode$EXEC_EVALUATION` (default) or
+  one of `ExecutionMode$EXEC_EVALUATION` (default) or
   `EXEC_NOISE_ESTIMATION`. The noise-estimation mode is only used by the
   adversarial-query noise-flooding path.
 
 - decryption_noise_mode:
 
-  `parity-deferred:` one of `DecryptionNoiseMode$FIXED_NOISE_DECRYPT`
-  (default) or `NOISE_FLOODING_DECRYPT`.
+  one of `DecryptionNoiseMode$FIXED_NOISE_DECRYPT` (default) or
+  `NOISE_FLOODING_DECRYPT`.
 
 - noise_estimate:
 
-  `parity-deferred:` numeric noise estimate used by the noise-flooding
-  path. Paired with `execution_mode = EXEC_NOISE_ESTIMATION`.
+  numeric noise estimate used by the noise-flooding path. Paired with
+  `execution_mode = EXEC_NOISE_ESTIMATION`.
 
 - desired_precision:
 
-  `parity-deferred:` numeric target precision (in bits) for the
-  noise-flooding path.
+  numeric target precision (in bits) for the noise-flooding path.
 
 - statistical_security:
 
-  `parity-deferred:` see the BGV entry.
+  see the BGV entry.
 
 - num_adversarial_queries:
 
-  `parity-deferred:` see the BGV entry.
+  see the BGV entry.
 
 - composite_degree:
 
-  `parity-deferred:` composite scaling degree for the
-  `COMPOSITESCALING*` scaling techniques. Upstream default 0 means
-  single-prime scaling.
+  composite scaling degree for the `COMPOSITESCALING*` scaling
+  techniques. Upstream default 0 means single-prime scaling.
 
 ## Value
 

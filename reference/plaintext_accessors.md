@@ -90,10 +90,8 @@ a silent wrong value.
   After construction the degree is the value passed to
   `make_ckks_packed_plaintext(..., noise_scale_deg)` under `FIXEDMANUAL`
   scaling; under `FLEXIBLEAUTO` the scheme overrides the user-supplied
-  value at context-generation time (see discovery D011). Incremented by
-  each multiplication before a rescale. The harness Signal 2
-  differential fixture for `MakeCKKSPackedPlaintext` reads this value to
-  verify the `noise_scale_deg` argument reached the C++ call site.
+  value at context-generation time. Incremented by each multiplication
+  before a rescale.
 
 - `get_length`: Integer effective length of a packed plaintext — the
   number of slots that hold user-supplied values. Defaults to the full
@@ -106,8 +104,7 @@ a silent wrong value.
   [`rescale()`](https://bnaras.github.io/openfhe.R/reference/rescale.md)
   the plaintext survives. For CKKS-packed plaintexts the level must
   match the ciphertext level at every homomorphic operation, or the
-  evaluator rejects the pair. The harness Signal 2 fixture reads this
-  value to verify the `level` argument reached the C++ call site.
+  evaluator rejects the pair.
 
 - `get_scaling_factor`: Numeric scaling factor for CKKS-based plaintexts
   — the multiplier the real vector is scaled by before encoding. Equals
@@ -130,68 +127,59 @@ a silent wrong value.
   vignettes use the default `REAL` type; set to `COMPLEX` only when you
   are constructing a CKKS plaintext from a complex vector.
 
-- `get_encoding_type`: `parity-deferred:` integer encoding type (see
-  `PlaintextEncodings` for the enum values).
+- `get_encoding_type`: integer encoding type (see `PlaintextEncodings`
+  for the enum values).
 
-- `get_scaling_factor_int`: `parity-deferred:` BGV integer scaling
-  factor. Returned as a double carrying a losslessly rounded 53-bit
-  integer per design.md §7.
+- `get_scaling_factor_int`: BGV integer scaling factor. Returned as a
+  double carrying a losslessly rounded 53-bit integer.
 
-- `get_scheme_id`: `parity-deferred:` scheme identifier (see `SchemeId`
-  enum).
+- `get_scheme_id`: scheme identifier (see `SchemeId` enum).
 
-- `is_encoded`: `parity-deferred:` logical "has the plaintext been
-  encoded yet?" The factory methods typically encode plaintexts eagerly,
-  so this is `TRUE` for fresh plaintexts. Returns `FALSE` only for
-  plaintexts constructed in a two-step uninitialised form.
+- `is_encoded`: logical "has the plaintext been encoded yet?" The
+  factory methods typically encode plaintexts eagerly, so this is `TRUE`
+  for fresh plaintexts. Returns `FALSE` only for plaintexts constructed
+  in a two-step uninitialised form.
 
-- `low_bound`: `parity-deferred:` integer lower bound that can be
-  encoded with the current plaintext modulus: `-floor(t / 2)`.
+- `low_bound`: integer lower bound that can be encoded with the current
+  plaintext modulus: `-floor(t / 2)`.
 
-- `high_bound`: `parity-deferred:` integer upper bound that can be
-  encoded with the current plaintext modulus: `floor(t / 2)`.
+- `high_bound`: integer upper bound that can be encoded with the current
+  plaintext modulus: `floor(t / 2)`.
 
-- `get_slots`: `parity-deferred:` integer CKKS slot count. For
-  `Plaintext` dispatch this is the `GetSlots()` value set at
-  construction. The harness Signal 2 fixture reads this value to verify
-  the `slots` argument reached the C++ call site.
+- `get_slots`: integer CKKS slot count. For `Plaintext` dispatch this is
+  the `GetSlots()` value set at construction.
 
-- `get_log_error`: `parity-deferred:` numeric log2 of the error
-  estimate. Only meaningful for CKKS plaintexts; throws for BFV/BGV.
+- `get_log_error`: numeric log2 of the error estimate. Only meaningful
+  for CKKS plaintexts; throws for BFV/BGV.
 
-- `get_coef_packed_value`: `parity-deferred:` integer vector of the
-  underlying coef-packed encoding. Throws for plaintexts whose subclass
-  is not coef-packed.
+- `get_coef_packed_value`: integer vector of the underlying coef-packed
+  encoding. Throws for plaintexts whose subclass is not coef-packed.
 
-- `get_string_value`: `parity-deferred:` string value of a
-  string-encoded plaintext. Throws for plaintexts whose subclass is not
-  string-encoded.
+- `get_string_value`: string value of a string-encoded plaintext. Throws
+  for plaintexts whose subclass is not string-encoded.
 
-- `get_element_ring_dimension`: `parity-deferred:` integer ring
-  dimension of the underlying `Element`. This is the plaintext's view of
-  the lattice ring dimension; typically matches the crypto context's
-  ring dimension.
+- `get_element_ring_dimension`: integer ring dimension of the underlying
+  `Element`. This is the plaintext's view of the lattice ring dimension;
+  typically matches the crypto context's ring dimension.
 
-- `set_scaling_factor`: `parity-deferred:` set the CKKS plaintext
-  scaling factor.
+- `set_scaling_factor`: set the CKKS plaintext scaling factor.
 
-- `set_scaling_factor_int`: `parity-deferred:` set the BGV plaintext
-  integer scaling factor.
+- `set_scaling_factor_int`: set the BGV plaintext integer scaling
+  factor.
 
-- `set_noise_scale_deg`: `parity-deferred:` set the plaintext noise
-  scale degree. Most users should not call this directly — the factory
-  methods and the evaluator manage `noise_scale_deg` automatically.
+- `set_noise_scale_deg`: set the plaintext noise scale degree. Most
+  users should not call this directly — the factory methods and the
+  evaluator manage `noise_scale_deg` automatically.
 
-- `set_level`: `parity-deferred:` set the plaintext level. As with
-  `set_noise_scale_deg`, most users should not call this directly.
+- `set_level`: set the plaintext level. As with `set_noise_scale_deg`,
+  most users should not call this directly.
 
-- `set_slots`: `parity-deferred:` set the CKKS slot count. As with
-  `set_length`, this is typically managed by the factory methods.
+- `set_slots`: set the CKKS slot count. As with `set_length`, this is
+  typically managed by the factory methods.
 
-- `set_string_value`: `parity-deferred:` set the string value of a
-  string-encoded plaintext. Throws for plaintexts whose subclass is not
-  string-encoded.
+- `set_string_value`: set the string value of a string-encoded
+  plaintext. Throws for plaintexts whose subclass is not string-encoded.
 
-- `set_int_vector_value`: `parity-deferred:` set the integer-vector
-  value of an integer-encoded plaintext. Throws for plaintexts whose
-  subclass does not support an integer vector.
+- `set_int_vector_value`: set the integer-vector value of an
+  integer-encoded plaintext. Throws for plaintexts whose subclass does
+  not support an integer vector.

@@ -24,12 +24,6 @@ key_switch_down(ct)
 
 A `Ciphertext` in the Q basis.
 
-## Details
-
-**R-first binding**: openfhe-python v1.5.1.0 does not expose
-`KeySwitchDown` at all. See `notes/upstream-defects.md` for the R-only
-surface tracking.
-
 ## See also
 
 [`eval_fast_rotation_ext()`](https://bnaras.github.io/openfhe.R/reference/eval_fast_rotation_ext.md)

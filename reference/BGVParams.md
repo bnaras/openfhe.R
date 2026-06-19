@@ -3,8 +3,7 @@
 Constructor for the BGV scheme's `CCParams` surface. Every argument maps
 1:1 to an enabled `CCParams<CryptoContextBGVRNS>::Set*` method. The 10
 BGV-disabled setters (`SetEncryptionTechnique`,
-`SetMultiplicationTechnique`, `SetExecutionMode`, …) are not exposed;
-see discovery D013.
+`SetMultiplicationTechnique`, `SetExecutionMode`, …) are not exposed.
 
 ## Usage
 
@@ -108,34 +107,34 @@ BGVParams(
 
 - max_relin_sk_deg:
 
-  `parity-deferred:` see the BFV entry.
+  see the BFV entry.
 
 - pre_mode:
 
-  `parity-deferred:` see the BFV entry.
+  see the BFV entry.
 
 - statistical_security:
 
-  `parity-deferred:` statistical security parameter (bits), used by the
-  noise-flooding decryption path.
+  statistical security parameter (bits), used by the noise-flooding
+  decryption path.
 
 - num_adversarial_queries:
 
-  `parity-deferred:` upper bound on the number of adversarial queries
-  the noise-flooding path must survive.
+  upper bound on the number of adversarial queries the noise-flooding
+  path must survive.
 
 - eval_add_count:
 
-  `parity-deferred:` see the BFV entry.
+  see the BFV entry.
 
 - key_switch_count:
 
-  `parity-deferred:` see the BFV entry.
+  see the BFV entry.
 
 - pre_num_hops:
 
-  `parity-deferred:` maximum number of hops for proxy re-encryption in
-  BGV. Only meaningful if the PRE feature is enabled.
+  maximum number of hops for proxy re-encryption in BGV. Only meaningful
+  if the PRE feature is enabled.
 
 ## Value
 

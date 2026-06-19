@@ -47,9 +47,9 @@ or
 [`CKKSParams()`](https://bnaras.github.io/openfhe.R/reference/CKKSParams.md)).
 See those functions' argument lists for the valid per-scheme setter
 surface — each scheme accepts only the setters that are *not* disabled
-in its upstream `CCParams<T>` specialization (see discovery D013).
-Passing an invalid scheme-specific argument produces an R-level "unused
-argument" error at the underlying `*Params()` call site.
+in its upstream `CCParams<T>` specialization. Passing an invalid
+scheme-specific argument produces an R-level "unused argument" error at
+the underlying `*Params()` call site.
 
 ## See also
 

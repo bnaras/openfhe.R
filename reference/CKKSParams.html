@@ -5,7 +5,7 @@ CCParams&amp;lt;CryptoContextCKKSRNS&amp;gt;::Set* method. The 8 CKKS-disabled
 setters (SetPlaintextModulus, SetEvalAddCount,
 SetKeySwitchCount, SetEncryptionTechnique,
 SetMultiplicationTechnique, SetPRENumHops, SetMultipartyMode,
-SetThresholdNumOfParties) are not exposed; see discovery D013.
+SetThresholdNumOfParties) are not exposed.
 CKKS is a fixed-point scheme over the complex numbers and has no
 plaintext modulus; threshold_num_of_parties is currently
 CKKS-disabled upstream even though the scheme supports threshold
@@ -15,7 +15,7 @@ CCParams&amp;lt;CryptoContextCKKSRNS&amp;gt;::Set* method. The 8 CKKS-disabled
 setters (SetPlaintextModulus, SetEvalAddCount,
 SetKeySwitchCount, SetEncryptionTechnique,
 SetMultiplicationTechnique, SetPRENumHops, SetMultipartyMode,
-SetThresholdNumOfParties) are not exposed; see discovery D013.
+SetThresholdNumOfParties) are not exposed.
 CKKS is a fixed-point scheme over the complex numbers and has no
 plaintext modulus; threshold_num_of_parties is currently
 CKKS-disabled upstream even though the scheme supports threshold
@@ -59,7 +59,7 @@ argument maps 1:1 to an enabled
 setters (<code>SetPlaintextModulus</code>, <code>SetEvalAddCount</code>,
 <code>SetKeySwitchCount</code>, <code>SetEncryptionTechnique</code>,
 <code>SetMultiplicationTechnique</code>, <code>SetPRENumHops</code>, <code>SetMultipartyMode</code>,
-<code>SetThresholdNumOfParties</code>) are not exposed; see discovery D013.
+<code>SetThresholdNumOfParties</code>) are not exposed.
 CKKS is a fixed-point scheme over the complex numbers and has no
 plaintext modulus; <code>threshold_num_of_parties</code> is currently
 CKKS-disabled upstream even though the scheme supports threshold
@@ -180,47 +180,47 @@ real vectors or complex vectors. All current R vignettes use
 
 
 <dt id="arg-max-relin-sk-deg">max_relin_sk_deg<a class="anchor" aria-label="anchor" href="#arg-max-relin-sk-deg"></a></dt>
-<dd><p><code>parity-deferred:</code> see the BFV entry.</p></dd>
+<dd><p>see the BFV entry.</p></dd>
 
 
 <dt id="arg-pre-mode">pre_mode<a class="anchor" aria-label="anchor" href="#arg-pre-mode"></a></dt>
-<dd><p><code>parity-deferred:</code> see the BFV entry.</p></dd>
+<dd><p>see the BFV entry.</p></dd>
 
 
 <dt id="arg-execution-mode">execution_mode<a class="anchor" aria-label="anchor" href="#arg-execution-mode"></a></dt>
-<dd><p><code>parity-deferred:</code> one of
+<dd><p>one of
 <code>ExecutionMode$EXEC_EVALUATION</code> (default) or
 <code>EXEC_NOISE_ESTIMATION</code>. The noise-estimation mode is only
 used by the adversarial-query noise-flooding path.</p></dd>
 
 
 <dt id="arg-decryption-noise-mode">decryption_noise_mode<a class="anchor" aria-label="anchor" href="#arg-decryption-noise-mode"></a></dt>
-<dd><p><code>parity-deferred:</code> one of
+<dd><p>one of
 <code>DecryptionNoiseMode$FIXED_NOISE_DECRYPT</code> (default) or
 <code>NOISE_FLOODING_DECRYPT</code>.</p></dd>
 
 
 <dt id="arg-noise-estimate">noise_estimate<a class="anchor" aria-label="anchor" href="#arg-noise-estimate"></a></dt>
-<dd><p><code>parity-deferred:</code> numeric noise estimate
+<dd><p>numeric noise estimate
 used by the noise-flooding path. Paired with <code>execution_mode = EXEC_NOISE_ESTIMATION</code>.</p></dd>
 
 
 <dt id="arg-desired-precision">desired_precision<a class="anchor" aria-label="anchor" href="#arg-desired-precision"></a></dt>
-<dd><p><code>parity-deferred:</code> numeric target
+<dd><p>numeric target
 precision (in bits) for the noise-flooding path.</p></dd>
 
 
 <dt id="arg-statistical-security">statistical_security<a class="anchor" aria-label="anchor" href="#arg-statistical-security"></a></dt>
-<dd><p><code>parity-deferred:</code> see the BGV entry.</p></dd>
+<dd><p>see the BGV entry.</p></dd>
 
 
 <dt id="arg-num-adversarial-queries">num_adversarial_queries<a class="anchor" aria-label="anchor" href="#arg-num-adversarial-queries"></a></dt>
-<dd><p><code>parity-deferred:</code> see the BGV
+<dd><p>see the BGV
 entry.</p></dd>
 
 
 <dt id="arg-composite-degree">composite_degree<a class="anchor" aria-label="anchor" href="#arg-composite-degree"></a></dt>
-<dd><p><code>parity-deferred:</code> composite scaling
+<dd><p>composite scaling
 degree for the <code>COMPOSITESCALING*</code> scaling techniques. Upstream
 default 0 means single-prime scaling.</p></dd>
 

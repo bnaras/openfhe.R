@@ -1,10 +1,8 @@
 # openfhe.R
 
-This is an interface to the
-[OpenFHE](https://github.com/openfheorg/openfhe-development) Fully
-[Homomorphic
-Encryption](https://en.wikipedia.org/wiki/Homomorphic_encryption)
-library.
+This is an interface to the [Fully Homomorphic
+Encryption](https://github.com/openfheorg/openfhe-development) library
+developed by [OpenFHE](https://openfhe.org).
 
 The companion package
 [homomorpheR](https://cran.r-project.org/package=homomorpheR) (version

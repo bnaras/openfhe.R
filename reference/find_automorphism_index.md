@@ -35,10 +35,6 @@ and by code that needs to address automorphism keys directly (for
 example, selectively generating eval keys for a sparse set of rotation
 amounts).
 
-**R-first binding**: `openfhe-python` does not bind
-`FindAutomorphismIndex`. Logged in `notes/upstream-defects.md` under
-R-only surface.
-
 ## See also
 
 [`find_automorphism_indices()`](https://bnaras.github.io/openfhe.R/reference/find_automorphism_indices.md)

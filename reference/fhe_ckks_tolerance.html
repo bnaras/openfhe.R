@@ -83,9 +83,8 @@ manual diff.</p>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Two dispatch forms:</p><ul><li><p><strong>Stage 1 (numeric)</strong>: pass parameters as direct arguments.
-Useful when the ciphertext isn't yet constructed — e.g. in a
-fixture setup block that has to produce a tolerance before
-calling <code><a href="encrypt.html">encrypt()</a></code>.</p></li>
+Useful when the ciphertext isn't yet constructed — e.g. when
+you need a tolerance before calling <code><a href="encrypt.html">encrypt()</a></code>.</p></li>
 <li><p><strong>Stage 2 (Ciphertext)</strong>: pass a <code>Ciphertext</code> directly. The
 helper reads the associated <code>CryptoContext</code> via
 <code><a href="get_crypto_context.html">get_crypto_context()</a></code>, pulls the multiplicative depth (from

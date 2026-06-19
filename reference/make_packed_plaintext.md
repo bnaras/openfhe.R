@@ -25,8 +25,8 @@ make_packed_plaintext(cc, values, noise_scale_deg = 1L, level = 0L)
 
   Integer degree of the initial scaling factor applied to the encoded
   plaintext. Defaults to `1L`; only meaningful under `FIXEDMANUAL`
-  scaling (under `FLEXIBLEAUTO` the scheme overrides this value — see
-  discovery D011). Every current vignette leaves it at the default.
+  scaling (under `FLEXIBLEAUTO` the scheme overrides this value). Every
+  current vignette leaves it at the default.
 
 - level:
 

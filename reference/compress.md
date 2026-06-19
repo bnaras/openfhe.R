@@ -3,9 +3,7 @@
 Truncates the ciphertext's RNS modulus representation to `towers_left`
 towers and sets its noise-scale-degree to `noise_scale_deg`. Used by the
 interactive multi-party bootstrapping protocol to shrink a ciphertext
-before sending it across the network (see
-`notes/blocks/E-bindings-rewrite/ gap-matrix.md` §21 for the
-bootstrap-side context).
+before sending it across the network.
 
 ## Usage
 

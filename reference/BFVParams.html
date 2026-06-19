@@ -4,12 +4,12 @@ maps 1:1 to an upstream CCParams&amp;lt;CryptoContextBFVRNS&amp;gt;::Set* method
 whose override is not disabled in the BFV specialization. The 13
 setters that BFV explicitly disables (SetScalingTechnique,
 SetFirstModSize, SetPRENumHops, SetExecutionMode, …) are not
-exposed here; see discovery D013."><meta property="og:description" content="Constructor for the BFV scheme's CCParams surface. Every argument
+exposed here."><meta property="og:description" content="Constructor for the BFV scheme's CCParams surface. Every argument
 maps 1:1 to an upstream CCParams&amp;lt;CryptoContextBFVRNS&amp;gt;::Set* method
 whose override is not disabled in the BFV specialization. The 13
 setters that BFV explicitly disables (SetScalingTechnique,
 SetFirstModSize, SetPRENumHops, SetExecutionMode, …) are not
-exposed here; see discovery D013."><meta property="og:image" content="https://bnaras.github.io/openfhe.R/logo.png"></head><body>
+exposed here."><meta property="og:image" content="https://bnaras.github.io/openfhe.R/logo.png"></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -48,7 +48,7 @@ maps 1:1 to an upstream <code>CCParams&lt;CryptoContextBFVRNS&gt;::Set*</code> m
 whose override is <em>not</em> disabled in the BFV specialization. The 13
 setters that BFV explicitly disables (<code>SetScalingTechnique</code>,
 <code>SetFirstModSize</code>, <code>SetPRENumHops</code>, <code>SetExecutionMode</code>, …) are not
-exposed here; see discovery D013.</p>
+exposed here.</p>
     </div>
 
     <div class="section level2">
@@ -203,7 +203,7 @@ are benchmarking multiplication-path variants.</p></dd>
 
 
 <dt id="arg-max-relin-sk-deg">max_relin_sk_deg<a class="anchor" aria-label="anchor" href="#arg-max-relin-sk-deg"></a></dt>
-<dd><p><code>parity-deferred:</code> maximum degree of the
+<dd><p>maximum degree of the
 secret key that can be relinearized. Upstream default is 2.
 No current vignette or Python example exercises this; the
 cpp11 binding is in place so a later release can promote it
@@ -211,25 +211,25 @@ without a recompile.</p></dd>
 
 
 <dt id="arg-pre-mode">pre_mode<a class="anchor" aria-label="anchor" href="#arg-pre-mode"></a></dt>
-<dd><p><code>parity-deferred:</code> proxy re-encryption mode
+<dd><p>proxy re-encryption mode
 (<code>PREMode$NOT_SET</code>, <code>INDCPA</code>, <code>FIXED_NOISE_HRA</code>,
 <code>NOISE_FLOODING_HRA</code>). Only meaningful if the <code>PRE</code> feature is
 enabled on the context. No current vignette uses PRE.</p></dd>
 
 
 <dt id="arg-eval-add-count">eval_add_count<a class="anchor" aria-label="anchor" href="#arg-eval-add-count"></a></dt>
-<dd><p><code>parity-deferred:</code> upstream noise-budget
+<dd><p>upstream noise-budget
 hint: maximum additions between multiplications. Used only by
 the noise-flooding path. Default 0.</p></dd>
 
 
 <dt id="arg-key-switch-count">key_switch_count<a class="anchor" aria-label="anchor" href="#arg-key-switch-count"></a></dt>
-<dd><p><code>parity-deferred:</code> upstream noise-budget
+<dd><p>upstream noise-budget
 hint: maximum key-switch count. Default 0.</p></dd>
 
 
 <dt id="arg-encryption-technique">encryption_technique<a class="anchor" aria-label="anchor" href="#arg-encryption-technique"></a></dt>
-<dd><p><code>parity-deferred:</code> BFV-specific
+<dd><p>BFV-specific
 encryption variant (<code>EncryptionTechnique$STANDARD</code> or
 <code>EXTENDED</code>). Default STANDARD.</p></dd>
 

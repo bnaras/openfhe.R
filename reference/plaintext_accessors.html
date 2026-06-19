@@ -129,11 +129,8 @@ wrong value.</p>
 CKKS plaintext. After construction the degree is the value
 passed to <code>make_ckks_packed_plaintext(..., noise_scale_deg)</code>
 under <code>FIXEDMANUAL</code> scaling; under <code>FLEXIBLEAUTO</code> the scheme
-overrides the user-supplied value at context-generation time
-(see discovery D011). Incremented by each multiplication
-before a rescale. The harness Signal 2 differential fixture
-for <code>MakeCKKSPackedPlaintext</code> reads this value to verify the
-<code>noise_scale_deg</code> argument reached the C++ call site.</p></li>
+overrides the user-supplied value at context-generation
+time. Incremented by each multiplication before a rescale.</p></li>
 <li><p><code>get_length</code>: Integer effective length of a
 packed plaintext — the number of slots that hold user-supplied
 values. Defaults to the full batch size at construction;
@@ -144,8 +141,7 @@ in the RNS modulus chain. <code>0</code> for a fresh plaintext;
 incremented by each <code><a href="rescale.html">rescale()</a></code> the plaintext survives. For
 CKKS-packed plaintexts the level must match the ciphertext
 level at every homomorphic operation, or the evaluator rejects
-the pair. The harness Signal 2 fixture reads this value to
-verify the <code>level</code> argument reached the C++ call site.</p></li>
+the pair.</p></li>
 <li><p><code>get_scaling_factor</code>: Numeric scaling factor for
 CKKS-based plaintexts — the multiplier the real vector is
 scaled by before encoding. Equals <code>2^scaling_mod_size</code> for a
@@ -166,60 +162,58 @@ override.</p></li>
 for CKKS plaintexts. Most R vignettes use the default <code>REAL</code>
 type; set to <code>COMPLEX</code> only when you are constructing a CKKS
 plaintext from a complex vector.</p></li>
-<li><p><code>get_encoding_type</code>: <code>parity-deferred:</code> integer
+<li><p><code>get_encoding_type</code>: integer
 encoding type (see <code>PlaintextEncodings</code> for the enum values).</p></li>
-<li><p><code>get_scaling_factor_int</code>: <code>parity-deferred:</code> BGV integer
+<li><p><code>get_scaling_factor_int</code>: BGV integer
 scaling factor. Returned as a double carrying a losslessly
-rounded 53-bit integer per design.md §7.</p></li>
-<li><p><code>get_scheme_id</code>: <code>parity-deferred:</code> scheme
+rounded 53-bit integer.</p></li>
+<li><p><code>get_scheme_id</code>: scheme
 identifier (see <code>SchemeId</code> enum).</p></li>
-<li><p><code>is_encoded</code>: <code>parity-deferred:</code> logical
+<li><p><code>is_encoded</code>: logical
 "has the plaintext been encoded yet?" The factory methods
 typically encode plaintexts eagerly, so this is <code>TRUE</code> for
 fresh plaintexts. Returns <code>FALSE</code> only for plaintexts
 constructed in a two-step uninitialised form.</p></li>
-<li><p><code>low_bound</code>: <code>parity-deferred:</code> integer
+<li><p><code>low_bound</code>: integer
 lower bound that can be encoded with the current plaintext
 modulus: <code>-floor(t / 2)</code>.</p></li>
-<li><p><code>high_bound</code>: <code>parity-deferred:</code> integer
+<li><p><code>high_bound</code>: integer
 upper bound that can be encoded with the current plaintext
 modulus: <code>floor(t / 2)</code>.</p></li>
-<li><p><code>get_slots</code>: <code>parity-deferred:</code> integer CKKS
+<li><p><code>get_slots</code>: integer CKKS
 slot count. For <code>Plaintext</code> dispatch this is the <code>GetSlots()</code>
-value set at construction. The harness Signal 2 fixture reads
-this value to verify the <code>slots</code> argument reached the C++
-call site.</p></li>
-<li><p><code>get_log_error</code>: <code>parity-deferred:</code> numeric
+value set at construction.</p></li>
+<li><p><code>get_log_error</code>: numeric
 log2 of the error estimate. Only meaningful for CKKS
 plaintexts; throws for BFV/BGV.</p></li>
-<li><p><code>get_coef_packed_value</code>: <code>parity-deferred:</code> integer
+<li><p><code>get_coef_packed_value</code>: integer
 vector of the underlying coef-packed encoding. Throws for
 plaintexts whose subclass is not coef-packed.</p></li>
-<li><p><code>get_string_value</code>: <code>parity-deferred:</code> string value
+<li><p><code>get_string_value</code>: string value
 of a string-encoded plaintext. Throws for plaintexts whose
 subclass is not string-encoded.</p></li>
-<li><p><code>get_element_ring_dimension</code>: <code>parity-deferred:</code> integer ring
+<li><p><code>get_element_ring_dimension</code>: integer ring
 dimension of the underlying <code>Element</code>. This is the plaintext's
 view of the lattice ring dimension; typically matches the
 crypto context's ring dimension.</p></li>
-<li><p><code>set_scaling_factor</code>: <code>parity-deferred:</code> set the CKKS
+<li><p><code>set_scaling_factor</code>: set the CKKS
 plaintext scaling factor.</p></li>
-<li><p><code>set_scaling_factor_int</code>: <code>parity-deferred:</code> set the BGV
+<li><p><code>set_scaling_factor_int</code>: set the BGV
 plaintext integer scaling factor.</p></li>
-<li><p><code>set_noise_scale_deg</code>: <code>parity-deferred:</code> set the
+<li><p><code>set_noise_scale_deg</code>: set the
 plaintext noise scale degree. Most users should not call this
 directly — the factory methods and the evaluator manage
 <code>noise_scale_deg</code> automatically.</p></li>
-<li><p><code>set_level</code>: <code>parity-deferred:</code> set the
+<li><p><code>set_level</code>: set the
 plaintext level. As with <code>set_noise_scale_deg</code>, most users
 should not call this directly.</p></li>
-<li><p><code>set_slots</code>: <code>parity-deferred:</code> set the CKKS
+<li><p><code>set_slots</code>: set the CKKS
 slot count. As with <code>set_length</code>, this is typically managed
 by the factory methods.</p></li>
-<li><p><code>set_string_value</code>: <code>parity-deferred:</code> set the
+<li><p><code>set_string_value</code>: set the
 string value of a string-encoded plaintext. Throws for
 plaintexts whose subclass is not string-encoded.</p></li>
-<li><p><code>set_int_vector_value</code>: <code>parity-deferred:</code> set the
+<li><p><code>set_int_vector_value</code>: set the
 integer-vector value of an integer-encoded plaintext. Throws
 for plaintexts whose subclass does not support an integer
 vector.</p></li>

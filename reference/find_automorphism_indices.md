@@ -3,8 +3,7 @@
 Vector form of
 [`find_automorphism_index()`](https://bnaras.github.io/openfhe.R/reference/find_automorphism_index.md).
 Takes a vector of slot indices and returns the corresponding
-automorphism indices in the same order. **R-first binding** —
-`openfhe-python` does not bind `FindAutomorphismIndices`.
+automorphism indices in the same order.
 
 ## Usage
 

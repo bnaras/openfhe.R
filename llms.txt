@@ -1,10 +1,8 @@
 # openfhe.R
 
-This is an interface to the
-[OpenFHE](https://github.com/openfheorg/openfhe-development) Fully
-[Homomorphic
-Encryption](https://en.wikipedia.org/wiki/Homomorphic_encryption)
-library.
+This is an interface to the [Fully Homomorphic
+Encryption](https://github.com/openfheorg/openfhe-development) library
+developed by [OpenFHE](https://openfhe.org).
 
 The companion package
 [homomorpheR](https://cran.r-project.org/package=homomorpheR) (version
@@ -467,9 +465,8 @@ get_packed_value(result)[1:8]
 - [`PREMode`](https://bnaras.github.io/openfhe.R/reference/PREMode.md) :
 
   Proxy Re-encryption Mode Source: pke/constants-defs.h enum
-  ProxyReEncryptionMode R-side name `PREMode` matches the design.md §8
-  shortening convention (same pattern as `Feature` for
-  `PKESchemeFeature`).
+  ProxyReEncryptionMode R-side name `PREMode` is a shortened form (same
+  pattern as `Feature` for `PKESchemeFeature`).
 
 - [`MultiplicationTechnique`](https://bnaras.github.io/openfhe.R/reference/MultiplicationTechnique.md)
   : Multiplication Technique (BFV) Source: pke/constants-defs.h enum

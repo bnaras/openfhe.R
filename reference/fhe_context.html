@@ -77,7 +77,7 @@ context beyond the default <code>PKE|KEYSWITCH|LEVELEDSHE</code> triple.</p></dd
 (<code><a href="BFVParams.html">BFVParams()</a></code>, <code><a href="BGVParams.html">BGVParams()</a></code>, or <code><a href="CKKSParams.html">CKKSParams()</a></code>). See those
 functions' argument lists for the valid per-scheme setter surface
 — each scheme accepts only the setters that are <em>not</em> disabled in
-its upstream <code>CCParams&lt;T&gt;</code> specialization (see discovery D013).
+its upstream <code>CCParams&lt;T&gt;</code> specialization.
 Passing an invalid scheme-specific argument produces an R-level
 "unused argument" error at the underlying <code>*Params()</code> call site.</p>
     </div>
