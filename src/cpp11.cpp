@@ -1831,42 +1831,84 @@ extern "C" SEXP _openfhe_R_CryptoContext__GetScalingFactorReal(SEXP cc_xp, SEXP 
     return cpp11::as_sexp(CryptoContext__GetScalingFactorReal(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<int>>(level)));
   END_CPP11
 }
-// pke_ckks_advanced_9115.cpp
+// pke_ckks_complex.cpp
+SEXP MakeCKKSPackedPlaintext__complex(SEXP cc_xp, SEXP values_complex, int noise_scale_deg, int level, int slots);
+extern "C" SEXP _openfhe_R_MakeCKKSPackedPlaintext__complex(SEXP cc_xp, SEXP values_complex, SEXP noise_scale_deg, SEXP level, SEXP slots) {
+  BEGIN_CPP11
+    return cpp11::as_sexp(MakeCKKSPackedPlaintext__complex(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(values_complex), cpp11::as_cpp<cpp11::decay_t<int>>(noise_scale_deg), cpp11::as_cpp<cpp11::decay_t<int>>(level), cpp11::as_cpp<cpp11::decay_t<int>>(slots)));
+  END_CPP11
+}
+// pke_ckks_complex.cpp
+SEXP Plaintext__GetCKKSPackedValue(SEXP pt_xp);
+extern "C" SEXP _openfhe_R_Plaintext__GetCKKSPackedValue(SEXP pt_xp) {
+  BEGIN_CPP11
+    return cpp11::as_sexp(Plaintext__GetCKKSPackedValue(cpp11::as_cpp<cpp11::decay_t<SEXP>>(pt_xp)));
+  END_CPP11
+}
+// pke_ckks_complex.cpp
+int CryptoContext__FindAutomorphismIndex(SEXP cc_xp, int idx);
+extern "C" SEXP _openfhe_R_CryptoContext__FindAutomorphismIndex(SEXP cc_xp, SEXP idx) {
+  BEGIN_CPP11
+    return cpp11::as_sexp(CryptoContext__FindAutomorphismIndex(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<int>>(idx)));
+  END_CPP11
+}
+// pke_ckks_complex.cpp
+integers CryptoContext__FindAutomorphismIndices(SEXP cc_xp, integers idx_list);
+extern "C" SEXP _openfhe_R_CryptoContext__FindAutomorphismIndices(SEXP cc_xp, SEXP idx_list) {
+  BEGIN_CPP11
+    return cpp11::as_sexp(CryptoContext__FindAutomorphismIndices(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<integers>>(idx_list)));
+  END_CPP11
+}
+// pke_ckks_complex.cpp
+SEXP CryptoContext__EvalAutomorphismKeyGen(SEXP cc_xp, SEXP sk_xp, integers idx_list);
+extern "C" SEXP _openfhe_R_CryptoContext__EvalAutomorphismKeyGen(SEXP cc_xp, SEXP sk_xp, SEXP idx_list) {
+  BEGIN_CPP11
+    return cpp11::as_sexp(CryptoContext__EvalAutomorphismKeyGen(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(sk_xp), cpp11::as_cpp<cpp11::decay_t<integers>>(idx_list)));
+  END_CPP11
+}
+// pke_ckks_complex.cpp
+SEXP EvalAutomorphism__(SEXP ct_xp, int idx, SEXP map_xp);
+extern "C" SEXP _openfhe_R_EvalAutomorphism__(SEXP ct_xp, SEXP idx, SEXP map_xp) {
+  BEGIN_CPP11
+    return cpp11::as_sexp(EvalAutomorphism__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp), cpp11::as_cpp<cpp11::decay_t<int>>(idx), cpp11::as_cpp<cpp11::decay_t<SEXP>>(map_xp)));
+  END_CPP11
+}
+// pke_ckks_eval_poly.cpp
 SEXP EvalPolyLinear__(SEXP ct_xp, doubles coefficients);
 extern "C" SEXP _openfhe_R_EvalPolyLinear__(SEXP ct_xp, SEXP coefficients) {
   BEGIN_CPP11
     return cpp11::as_sexp(EvalPolyLinear__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp), cpp11::as_cpp<cpp11::decay_t<doubles>>(coefficients)));
   END_CPP11
 }
-// pke_ckks_advanced_9115.cpp
+// pke_ckks_eval_poly.cpp
 SEXP EvalPolyPS__(SEXP ct_xp, doubles coefficients);
 extern "C" SEXP _openfhe_R_EvalPolyPS__(SEXP ct_xp, SEXP coefficients) {
   BEGIN_CPP11
     return cpp11::as_sexp(EvalPolyPS__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp), cpp11::as_cpp<cpp11::decay_t<doubles>>(coefficients)));
   END_CPP11
 }
-// pke_ckks_advanced_9115.cpp
+// pke_ckks_eval_poly.cpp
 SEXP EvalChebyshevSeriesLinear__(SEXP ct_xp, doubles coefficients, double a, double b);
 extern "C" SEXP _openfhe_R_EvalChebyshevSeriesLinear__(SEXP ct_xp, SEXP coefficients, SEXP a, SEXP b) {
   BEGIN_CPP11
     return cpp11::as_sexp(EvalChebyshevSeriesLinear__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp), cpp11::as_cpp<cpp11::decay_t<doubles>>(coefficients), cpp11::as_cpp<cpp11::decay_t<double>>(a), cpp11::as_cpp<cpp11::decay_t<double>>(b)));
   END_CPP11
 }
-// pke_ckks_advanced_9115.cpp
+// pke_ckks_eval_poly.cpp
 SEXP EvalChebyshevSeriesPS__(SEXP ct_xp, doubles coefficients, double a, double b);
 extern "C" SEXP _openfhe_R_EvalChebyshevSeriesPS__(SEXP ct_xp, SEXP coefficients, SEXP a, SEXP b) {
   BEGIN_CPP11
     return cpp11::as_sexp(EvalChebyshevSeriesPS__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp), cpp11::as_cpp<cpp11::decay_t<doubles>>(coefficients), cpp11::as_cpp<cpp11::decay_t<double>>(a), cpp11::as_cpp<cpp11::decay_t<double>>(b)));
   END_CPP11
 }
-// pke_ckks_advanced_9116.cpp
+// pke_ckks_fast_rotation.cpp
 int CryptoContext__GetCKKSBootCorrectionFactor(SEXP cc_xp);
 extern "C" SEXP _openfhe_R_CryptoContext__GetCKKSBootCorrectionFactor(SEXP cc_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(CryptoContext__GetCKKSBootCorrectionFactor(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp)));
   END_CPP11
 }
-// pke_ckks_advanced_9116.cpp
+// pke_ckks_fast_rotation.cpp
 void CryptoContext__SetCKKSBootCorrectionFactor(SEXP cc_xp, int cf);
 extern "C" SEXP _openfhe_R_CryptoContext__SetCKKSBootCorrectionFactor(SEXP cc_xp, SEXP cf) {
   BEGIN_CPP11
@@ -1874,147 +1916,105 @@ extern "C" SEXP _openfhe_R_CryptoContext__SetCKKSBootCorrectionFactor(SEXP cc_xp
     return R_NilValue;
   END_CPP11
 }
-// pke_ckks_advanced_9116.cpp
+// pke_ckks_fast_rotation.cpp
 SEXP EvalFastRotationExt__(SEXP ct_xp, int index, SEXP precomp_xp, bool add_first);
 extern "C" SEXP _openfhe_R_EvalFastRotationExt__(SEXP ct_xp, SEXP index, SEXP precomp_xp, SEXP add_first) {
   BEGIN_CPP11
     return cpp11::as_sexp(EvalFastRotationExt__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp), cpp11::as_cpp<cpp11::decay_t<int>>(index), cpp11::as_cpp<cpp11::decay_t<SEXP>>(precomp_xp), cpp11::as_cpp<cpp11::decay_t<bool>>(add_first)));
   END_CPP11
 }
-// pke_ckks_advanced_9116.cpp
+// pke_ckks_fast_rotation.cpp
 SEXP EvalFastRotation__3arg(SEXP ct_xp, int index, SEXP precomp_xp);
 extern "C" SEXP _openfhe_R_EvalFastRotation__3arg(SEXP ct_xp, SEXP index, SEXP precomp_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(EvalFastRotation__3arg(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp), cpp11::as_cpp<cpp11::decay_t<int>>(index), cpp11::as_cpp<cpp11::decay_t<SEXP>>(precomp_xp)));
   END_CPP11
 }
-// pke_ckks_complex_9123.cpp
-SEXP MakeCKKSPackedPlaintext__complex(SEXP cc_xp, SEXP values_complex, int noise_scale_deg, int level, int slots);
-extern "C" SEXP _openfhe_R_MakeCKKSPackedPlaintext__complex(SEXP cc_xp, SEXP values_complex, SEXP noise_scale_deg, SEXP level, SEXP slots) {
-  BEGIN_CPP11
-    return cpp11::as_sexp(MakeCKKSPackedPlaintext__complex(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(values_complex), cpp11::as_cpp<cpp11::decay_t<int>>(noise_scale_deg), cpp11::as_cpp<cpp11::decay_t<int>>(level), cpp11::as_cpp<cpp11::decay_t<int>>(slots)));
-  END_CPP11
-}
-// pke_ckks_complex_9123.cpp
-SEXP Plaintext__GetCKKSPackedValue(SEXP pt_xp);
-extern "C" SEXP _openfhe_R_Plaintext__GetCKKSPackedValue(SEXP pt_xp) {
-  BEGIN_CPP11
-    return cpp11::as_sexp(Plaintext__GetCKKSPackedValue(cpp11::as_cpp<cpp11::decay_t<SEXP>>(pt_xp)));
-  END_CPP11
-}
-// pke_ckks_complex_9123.cpp
-int CryptoContext__FindAutomorphismIndex(SEXP cc_xp, int idx);
-extern "C" SEXP _openfhe_R_CryptoContext__FindAutomorphismIndex(SEXP cc_xp, SEXP idx) {
-  BEGIN_CPP11
-    return cpp11::as_sexp(CryptoContext__FindAutomorphismIndex(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<int>>(idx)));
-  END_CPP11
-}
-// pke_ckks_complex_9123.cpp
-integers CryptoContext__FindAutomorphismIndices(SEXP cc_xp, integers idx_list);
-extern "C" SEXP _openfhe_R_CryptoContext__FindAutomorphismIndices(SEXP cc_xp, SEXP idx_list) {
-  BEGIN_CPP11
-    return cpp11::as_sexp(CryptoContext__FindAutomorphismIndices(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<integers>>(idx_list)));
-  END_CPP11
-}
-// pke_ckks_complex_9123.cpp
-SEXP CryptoContext__EvalAutomorphismKeyGen(SEXP cc_xp, SEXP sk_xp, integers idx_list);
-extern "C" SEXP _openfhe_R_CryptoContext__EvalAutomorphismKeyGen(SEXP cc_xp, SEXP sk_xp, SEXP idx_list) {
-  BEGIN_CPP11
-    return cpp11::as_sexp(CryptoContext__EvalAutomorphismKeyGen(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(sk_xp), cpp11::as_cpp<cpp11::decay_t<integers>>(idx_list)));
-  END_CPP11
-}
-// pke_ckks_complex_9123.cpp
-SEXP EvalAutomorphism__(SEXP ct_xp, int idx, SEXP map_xp);
-extern "C" SEXP _openfhe_R_EvalAutomorphism__(SEXP ct_xp, SEXP idx, SEXP map_xp) {
-  BEGIN_CPP11
-    return cpp11::as_sexp(EvalAutomorphism__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp), cpp11::as_cpp<cpp11::decay_t<int>>(idx), cpp11::as_cpp<cpp11::decay_t<SEXP>>(map_xp)));
-  END_CPP11
-}
-// pke_ckks_interactive_boot_9117.cpp
+// pke_ckks_interactive_boot.cpp
 SEXP KeySwitchDown__(SEXP ct_xp);
 extern "C" SEXP _openfhe_R_KeySwitchDown__(SEXP ct_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(KeySwitchDown__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp)));
   END_CPP11
 }
-// pke_ckks_interactive_boot_9117.cpp
+// pke_ckks_interactive_boot.cpp
 SEXP IntBootDecrypt__(SEXP sk_xp, SEXP ct_xp);
 extern "C" SEXP _openfhe_R_IntBootDecrypt__(SEXP sk_xp, SEXP ct_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(IntBootDecrypt__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(sk_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp)));
   END_CPP11
 }
-// pke_ckks_interactive_boot_9117.cpp
+// pke_ckks_interactive_boot.cpp
 SEXP IntBootEncrypt__(SEXP pk_xp, SEXP ct_xp);
 extern "C" SEXP _openfhe_R_IntBootEncrypt__(SEXP pk_xp, SEXP ct_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(IntBootEncrypt__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(pk_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp)));
   END_CPP11
 }
-// pke_ckks_interactive_boot_9117.cpp
+// pke_ckks_interactive_boot.cpp
 SEXP IntBootAdd__(SEXP ct1_xp, SEXP ct2_xp);
 extern "C" SEXP _openfhe_R_IntBootAdd__(SEXP ct1_xp, SEXP ct2_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(IntBootAdd__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct1_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct2_xp)));
   END_CPP11
 }
-// pke_ckks_interactive_boot_9117.cpp
+// pke_ckks_interactive_boot.cpp
 SEXP IntBootAdjustScale__(SEXP ct_xp);
 extern "C" SEXP _openfhe_R_IntBootAdjustScale__(SEXP ct_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(IntBootAdjustScale__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp)));
   END_CPP11
 }
-// pke_ckks_interactive_boot_9117.cpp
+// pke_ckks_interactive_boot.cpp
 SEXP IntMPBootAdjustScale__(SEXP ct_xp);
 extern "C" SEXP _openfhe_R_IntMPBootAdjustScale__(SEXP ct_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(IntMPBootAdjustScale__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp)));
   END_CPP11
 }
-// pke_ckks_interactive_boot_9117.cpp
+// pke_ckks_interactive_boot.cpp
 SEXP IntMPBootRandomElementGen__pk(SEXP cc_xp, SEXP pk_xp);
 extern "C" SEXP _openfhe_R_IntMPBootRandomElementGen__pk(SEXP cc_xp, SEXP pk_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(IntMPBootRandomElementGen__pk(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(pk_xp)));
   END_CPP11
 }
-// pke_ckks_interactive_boot_9117.cpp
+// pke_ckks_interactive_boot.cpp
 SEXP IntMPBootRandomElementGen__ct(SEXP ct_xp);
 extern "C" SEXP _openfhe_R_IntMPBootRandomElementGen__ct(SEXP ct_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(IntMPBootRandomElementGen__ct(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp)));
   END_CPP11
 }
-// pke_ckks_interactive_boot_9117.cpp
+// pke_ckks_interactive_boot.cpp
 SEXP IntMPBootDecrypt__(SEXP sk_xp, SEXP ct_xp, SEXP a_xp);
 extern "C" SEXP _openfhe_R_IntMPBootDecrypt__(SEXP sk_xp, SEXP ct_xp, SEXP a_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(IntMPBootDecrypt__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(sk_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(a_xp)));
   END_CPP11
 }
-// pke_ckks_interactive_boot_9117.cpp
+// pke_ckks_interactive_boot.cpp
 SEXP IntMPBootAdd__(SEXP cc_xp, list shares_pair_list);
 extern "C" SEXP _openfhe_R_IntMPBootAdd__(SEXP cc_xp, SEXP shares_pair_list) {
   BEGIN_CPP11
     return cpp11::as_sexp(IntMPBootAdd__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<list>>(shares_pair_list)));
   END_CPP11
 }
-// pke_ckks_interactive_boot_9117.cpp
+// pke_ckks_interactive_boot.cpp
 SEXP IntMPBootEncrypt__(SEXP pk_xp, list shares_pair_list, SEXP a_xp, SEXP ct_xp);
 extern "C" SEXP _openfhe_R_IntMPBootEncrypt__(SEXP pk_xp, SEXP shares_pair_list, SEXP a_xp, SEXP ct_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(IntMPBootEncrypt__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(pk_xp), cpp11::as_cpp<cpp11::decay_t<list>>(shares_pair_list), cpp11::as_cpp<cpp11::decay_t<SEXP>>(a_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp)));
   END_CPP11
 }
-// pke_closers_9107.cpp
+// pke_closers.cpp
 SEXP CryptoContext__Encrypt_PrivateKey(SEXP cc_xp, SEXP sk_xp, SEXP pt_xp);
 extern "C" SEXP _openfhe_R_CryptoContext__Encrypt_PrivateKey(SEXP cc_xp, SEXP sk_xp, SEXP pt_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(CryptoContext__Encrypt_PrivateKey(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(sk_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(pt_xp)));
   END_CPP11
 }
-// pke_closers_9107.cpp
+// pke_closers.cpp
 void CryptoContext__Enable_Mask(SEXP cc_xp, int mask);
 extern "C" SEXP _openfhe_R_CryptoContext__Enable_Mask(SEXP cc_xp, SEXP mask) {
   BEGIN_CPP11
@@ -2022,14 +2022,14 @@ extern "C" SEXP _openfhe_R_CryptoContext__Enable_Mask(SEXP cc_xp, SEXP mask) {
     return R_NilValue;
   END_CPP11
 }
-// pke_closers_9107.cpp
+// pke_closers.cpp
 int CryptoContext__GetSchemeId(SEXP cc_xp);
 extern "C" SEXP _openfhe_R_CryptoContext__GetSchemeId(SEXP cc_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(CryptoContext__GetSchemeId(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp)));
   END_CPP11
 }
-// pke_closers_9107.cpp
+// pke_closers.cpp
 void CryptoContext__ClearStaticMapsAndVectors();
 extern "C" SEXP _openfhe_R_CryptoContext__ClearStaticMapsAndVectors() {
   BEGIN_CPP11
@@ -2037,14 +2037,14 @@ extern "C" SEXP _openfhe_R_CryptoContext__ClearStaticMapsAndVectors() {
     return R_NilValue;
   END_CPP11
 }
-// pke_closers_9107.cpp
+// pke_closers.cpp
 std::string PublicKey__GetKeyTag(SEXP key_xp);
 extern "C" SEXP _openfhe_R_PublicKey__GetKeyTag(SEXP key_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(PublicKey__GetKeyTag(cpp11::as_cpp<cpp11::decay_t<SEXP>>(key_xp)));
   END_CPP11
 }
-// pke_closers_9107.cpp
+// pke_closers.cpp
 void PublicKey__SetKeyTag(SEXP key_xp, std::string tag);
 extern "C" SEXP _openfhe_R_PublicKey__SetKeyTag(SEXP key_xp, SEXP tag) {
   BEGIN_CPP11
@@ -2052,14 +2052,14 @@ extern "C" SEXP _openfhe_R_PublicKey__SetKeyTag(SEXP key_xp, SEXP tag) {
     return R_NilValue;
   END_CPP11
 }
-// pke_closers_9107.cpp
+// pke_closers.cpp
 std::string PrivateKey__GetKeyTag(SEXP key_xp);
 extern "C" SEXP _openfhe_R_PrivateKey__GetKeyTag(SEXP key_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(PrivateKey__GetKeyTag(cpp11::as_cpp<cpp11::decay_t<SEXP>>(key_xp)));
   END_CPP11
 }
-// pke_closers_9107.cpp
+// pke_closers.cpp
 void PrivateKey__SetKeyTag(SEXP key_xp, std::string tag);
 extern "C" SEXP _openfhe_R_PrivateKey__SetKeyTag(SEXP key_xp, SEXP tag) {
   BEGIN_CPP11
@@ -2201,7 +2201,7 @@ extern "C" SEXP _openfhe_R_CryptoContext__GetKeySwitchTechnique(SEXP cc_xp) {
     return cpp11::as_sexp(CryptoContext__GetKeySwitchTechnique(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp)));
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 void EvalAddInPlace__ct_ct(SEXP ct1_xp, SEXP ct2_xp);
 extern "C" SEXP _openfhe_R_EvalAddInPlace__ct_ct(SEXP ct1_xp, SEXP ct2_xp) {
   BEGIN_CPP11
@@ -2209,7 +2209,7 @@ extern "C" SEXP _openfhe_R_EvalAddInPlace__ct_ct(SEXP ct1_xp, SEXP ct2_xp) {
     return R_NilValue;
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 void EvalAddInPlace__ct_pt(SEXP ct_xp, SEXP pt_xp);
 extern "C" SEXP _openfhe_R_EvalAddInPlace__ct_pt(SEXP ct_xp, SEXP pt_xp) {
   BEGIN_CPP11
@@ -2217,7 +2217,7 @@ extern "C" SEXP _openfhe_R_EvalAddInPlace__ct_pt(SEXP ct_xp, SEXP pt_xp) {
     return R_NilValue;
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 void EvalAddInPlace__ct_scalar(SEXP ct_xp, double scalar);
 extern "C" SEXP _openfhe_R_EvalAddInPlace__ct_scalar(SEXP ct_xp, SEXP scalar) {
   BEGIN_CPP11
@@ -2225,7 +2225,7 @@ extern "C" SEXP _openfhe_R_EvalAddInPlace__ct_scalar(SEXP ct_xp, SEXP scalar) {
     return R_NilValue;
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 void EvalSubInPlace__ct_ct(SEXP ct1_xp, SEXP ct2_xp);
 extern "C" SEXP _openfhe_R_EvalSubInPlace__ct_ct(SEXP ct1_xp, SEXP ct2_xp) {
   BEGIN_CPP11
@@ -2233,7 +2233,7 @@ extern "C" SEXP _openfhe_R_EvalSubInPlace__ct_ct(SEXP ct1_xp, SEXP ct2_xp) {
     return R_NilValue;
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 void EvalSubInPlace__ct_pt(SEXP ct_xp, SEXP pt_xp);
 extern "C" SEXP _openfhe_R_EvalSubInPlace__ct_pt(SEXP ct_xp, SEXP pt_xp) {
   BEGIN_CPP11
@@ -2241,7 +2241,7 @@ extern "C" SEXP _openfhe_R_EvalSubInPlace__ct_pt(SEXP ct_xp, SEXP pt_xp) {
     return R_NilValue;
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 void EvalSubInPlace__ct_scalar(SEXP ct_xp, double scalar);
 extern "C" SEXP _openfhe_R_EvalSubInPlace__ct_scalar(SEXP ct_xp, SEXP scalar) {
   BEGIN_CPP11
@@ -2249,7 +2249,7 @@ extern "C" SEXP _openfhe_R_EvalSubInPlace__ct_scalar(SEXP ct_xp, SEXP scalar) {
     return R_NilValue;
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 void EvalMultInPlace__ct_scalar(SEXP ct_xp, double scalar);
 extern "C" SEXP _openfhe_R_EvalMultInPlace__ct_scalar(SEXP ct_xp, SEXP scalar) {
   BEGIN_CPP11
@@ -2257,7 +2257,7 @@ extern "C" SEXP _openfhe_R_EvalMultInPlace__ct_scalar(SEXP ct_xp, SEXP scalar) {
     return R_NilValue;
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 void EvalNegateInPlace__ct(SEXP ct_xp);
 extern "C" SEXP _openfhe_R_EvalNegateInPlace__ct(SEXP ct_xp) {
   BEGIN_CPP11
@@ -2265,63 +2265,63 @@ extern "C" SEXP _openfhe_R_EvalNegateInPlace__ct(SEXP ct_xp) {
     return R_NilValue;
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 SEXP EvalAddMutable__ct_ct(SEXP ct1_xp, SEXP ct2_xp);
 extern "C" SEXP _openfhe_R_EvalAddMutable__ct_ct(SEXP ct1_xp, SEXP ct2_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(EvalAddMutable__ct_ct(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct1_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct2_xp)));
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 SEXP EvalSubMutable__ct_ct(SEXP ct1_xp, SEXP ct2_xp);
 extern "C" SEXP _openfhe_R_EvalSubMutable__ct_ct(SEXP ct1_xp, SEXP ct2_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(EvalSubMutable__ct_ct(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct1_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct2_xp)));
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 SEXP EvalMultMutable__ct_ct(SEXP ct1_xp, SEXP ct2_xp);
 extern "C" SEXP _openfhe_R_EvalMultMutable__ct_ct(SEXP ct1_xp, SEXP ct2_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(EvalMultMutable__ct_ct(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct1_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct2_xp)));
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 SEXP EvalSquareMutable__ct(SEXP ct_xp);
 extern "C" SEXP _openfhe_R_EvalSquareMutable__ct(SEXP ct_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(EvalSquareMutable__ct(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp)));
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 SEXP EvalMultNoRelin__ct_ct(SEXP ct1_xp, SEXP ct2_xp);
 extern "C" SEXP _openfhe_R_EvalMultNoRelin__ct_ct(SEXP ct1_xp, SEXP ct2_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(EvalMultNoRelin__ct_ct(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct1_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct2_xp)));
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 SEXP Relinearize__ct(SEXP ct_xp);
 extern "C" SEXP _openfhe_R_Relinearize__ct(SEXP ct_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(Relinearize__ct(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp)));
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 SEXP EvalMultAndRelinearize__ct_ct(SEXP ct1_xp, SEXP ct2_xp);
 extern "C" SEXP _openfhe_R_EvalMultAndRelinearize__ct_ct(SEXP ct1_xp, SEXP ct2_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(EvalMultAndRelinearize__ct_ct(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct1_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct2_xp)));
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 SEXP ModReduce__ct(SEXP ct_xp);
 extern "C" SEXP _openfhe_R_ModReduce__ct(SEXP ct_xp) {
   BEGIN_CPP11
     return cpp11::as_sexp(ModReduce__ct(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp)));
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 void ModReduceInPlace__ct(SEXP ct_xp);
 extern "C" SEXP _openfhe_R_ModReduceInPlace__ct(SEXP ct_xp) {
   BEGIN_CPP11
@@ -2329,14 +2329,14 @@ extern "C" SEXP _openfhe_R_ModReduceInPlace__ct(SEXP ct_xp) {
     return R_NilValue;
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 SEXP LevelReduce__ct(SEXP ct_xp, SEXP eval_key_xp, int levels);
 extern "C" SEXP _openfhe_R_LevelReduce__ct(SEXP ct_xp, SEXP eval_key_xp, SEXP levels) {
   BEGIN_CPP11
     return cpp11::as_sexp(LevelReduce__ct(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(eval_key_xp), cpp11::as_cpp<cpp11::decay_t<int>>(levels)));
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 void LevelReduceInPlace__ct(SEXP ct_xp, SEXP eval_key_xp, int levels);
 extern "C" SEXP _openfhe_R_LevelReduceInPlace__ct(SEXP ct_xp, SEXP eval_key_xp, SEXP levels) {
   BEGIN_CPP11
@@ -2344,14 +2344,42 @@ extern "C" SEXP _openfhe_R_LevelReduceInPlace__ct(SEXP ct_xp, SEXP eval_key_xp, 
     return R_NilValue;
   END_CPP11
 }
-// pke_eval_9111.cpp
+// pke_eval.cpp
 SEXP Compress__ct(SEXP ct_xp, int towers_left, int noise_scale_deg);
 extern "C" SEXP _openfhe_R_Compress__ct(SEXP ct_xp, SEXP towers_left, SEXP noise_scale_deg) {
   BEGIN_CPP11
     return cpp11::as_sexp(Compress__ct(cpp11::as_cpp<cpp11::decay_t<SEXP>>(ct_xp), cpp11::as_cpp<cpp11::decay_t<int>>(towers_left), cpp11::as_cpp<cpp11::decay_t<int>>(noise_scale_deg)));
   END_CPP11
 }
-// pke_key_management_9118.cpp
+// pke_key_management_getters.cpp
+list CryptoContext__GetAllEvalMultKeys();
+extern "C" SEXP _openfhe_R_CryptoContext__GetAllEvalMultKeys() {
+  BEGIN_CPP11
+    return cpp11::as_sexp(CryptoContext__GetAllEvalMultKeys());
+  END_CPP11
+}
+// pke_key_management_getters.cpp
+list CryptoContext__GetEvalMultKeyVector(std::string key_tag);
+extern "C" SEXP _openfhe_R_CryptoContext__GetEvalMultKeyVector(SEXP key_tag) {
+  BEGIN_CPP11
+    return cpp11::as_sexp(CryptoContext__GetEvalMultKeyVector(cpp11::as_cpp<cpp11::decay_t<std::string>>(key_tag)));
+  END_CPP11
+}
+// pke_key_management_getters.cpp
+list CryptoContext__GetAllEvalAutomorphismKeys();
+extern "C" SEXP _openfhe_R_CryptoContext__GetAllEvalAutomorphismKeys() {
+  BEGIN_CPP11
+    return cpp11::as_sexp(CryptoContext__GetAllEvalAutomorphismKeys());
+  END_CPP11
+}
+// pke_key_management_getters.cpp
+list CryptoContext__GetAllEvalSumKeys();
+extern "C" SEXP _openfhe_R_CryptoContext__GetAllEvalSumKeys() {
+  BEGIN_CPP11
+    return cpp11::as_sexp(CryptoContext__GetAllEvalSumKeys());
+  END_CPP11
+}
+// pke_key_management_insert.cpp
 void CryptoContext__InsertEvalMultKey(list eval_key_list, std::string key_tag);
 extern "C" SEXP _openfhe_R_CryptoContext__InsertEvalMultKey(SEXP eval_key_list, SEXP key_tag) {
   BEGIN_CPP11
@@ -2359,7 +2387,7 @@ extern "C" SEXP _openfhe_R_CryptoContext__InsertEvalMultKey(SEXP eval_key_list, 
     return R_NilValue;
   END_CPP11
 }
-// pke_key_management_9118.cpp
+// pke_key_management_insert.cpp
 void CryptoContext__ClearEvalMultKeys__tag(std::string key_tag);
 extern "C" SEXP _openfhe_R_CryptoContext__ClearEvalMultKeys__tag(SEXP key_tag) {
   BEGIN_CPP11
@@ -2367,7 +2395,7 @@ extern "C" SEXP _openfhe_R_CryptoContext__ClearEvalMultKeys__tag(SEXP key_tag) {
     return R_NilValue;
   END_CPP11
 }
-// pke_key_management_9118.cpp
+// pke_key_management_insert.cpp
 void CryptoContext__ClearEvalAutomorphismKeys__tag(std::string key_tag);
 extern "C" SEXP _openfhe_R_CryptoContext__ClearEvalAutomorphismKeys__tag(SEXP key_tag) {
   BEGIN_CPP11
@@ -2375,84 +2403,56 @@ extern "C" SEXP _openfhe_R_CryptoContext__ClearEvalAutomorphismKeys__tag(SEXP ke
     return R_NilValue;
   END_CPP11
 }
-// pke_key_management_9119.cpp
-list CryptoContext__GetAllEvalMultKeys();
-extern "C" SEXP _openfhe_R_CryptoContext__GetAllEvalMultKeys() {
-  BEGIN_CPP11
-    return cpp11::as_sexp(CryptoContext__GetAllEvalMultKeys());
-  END_CPP11
-}
-// pke_key_management_9119.cpp
-list CryptoContext__GetEvalMultKeyVector(std::string key_tag);
-extern "C" SEXP _openfhe_R_CryptoContext__GetEvalMultKeyVector(SEXP key_tag) {
-  BEGIN_CPP11
-    return cpp11::as_sexp(CryptoContext__GetEvalMultKeyVector(cpp11::as_cpp<cpp11::decay_t<std::string>>(key_tag)));
-  END_CPP11
-}
-// pke_key_management_9119.cpp
-list CryptoContext__GetAllEvalAutomorphismKeys();
-extern "C" SEXP _openfhe_R_CryptoContext__GetAllEvalAutomorphismKeys() {
-  BEGIN_CPP11
-    return cpp11::as_sexp(CryptoContext__GetAllEvalAutomorphismKeys());
-  END_CPP11
-}
-// pke_key_management_9119.cpp
-list CryptoContext__GetAllEvalSumKeys();
-extern "C" SEXP _openfhe_R_CryptoContext__GetAllEvalSumKeys() {
-  BEGIN_CPP11
-    return cpp11::as_sexp(CryptoContext__GetAllEvalSumKeys());
-  END_CPP11
-}
-// pke_multi_eval_keys_9113.cpp
+// pke_multi_eval_keys.cpp
 SEXP MultiEvalAutomorphismKeyGen__(SEXP cc_xp, SEXP sk_xp, SEXP map_xp, integers index_list, std::string key_tag);
 extern "C" SEXP _openfhe_R_MultiEvalAutomorphismKeyGen__(SEXP cc_xp, SEXP sk_xp, SEXP map_xp, SEXP index_list, SEXP key_tag) {
   BEGIN_CPP11
     return cpp11::as_sexp(MultiEvalAutomorphismKeyGen__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(sk_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(map_xp), cpp11::as_cpp<cpp11::decay_t<integers>>(index_list), cpp11::as_cpp<cpp11::decay_t<std::string>>(key_tag)));
   END_CPP11
 }
-// pke_multi_eval_keys_9113.cpp
+// pke_multi_eval_keys.cpp
 SEXP MultiEvalAtIndexKeyGen__(SEXP cc_xp, SEXP sk_xp, SEXP map_xp, integers index_list, std::string key_tag);
 extern "C" SEXP _openfhe_R_MultiEvalAtIndexKeyGen__(SEXP cc_xp, SEXP sk_xp, SEXP map_xp, SEXP index_list, SEXP key_tag) {
   BEGIN_CPP11
     return cpp11::as_sexp(MultiEvalAtIndexKeyGen__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(sk_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(map_xp), cpp11::as_cpp<cpp11::decay_t<integers>>(index_list), cpp11::as_cpp<cpp11::decay_t<std::string>>(key_tag)));
   END_CPP11
 }
-// pke_multi_eval_keys_9113.cpp
+// pke_multi_eval_keys.cpp
 SEXP MultiEvalSumKeyGen__(SEXP cc_xp, SEXP sk_xp, SEXP map_xp, std::string key_tag);
 extern "C" SEXP _openfhe_R_MultiEvalSumKeyGen__(SEXP cc_xp, SEXP sk_xp, SEXP map_xp, SEXP key_tag) {
   BEGIN_CPP11
     return cpp11::as_sexp(MultiEvalSumKeyGen__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(sk_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(map_xp), cpp11::as_cpp<cpp11::decay_t<std::string>>(key_tag)));
   END_CPP11
 }
-// pke_multi_eval_keys_9113.cpp
+// pke_multi_eval_keys.cpp
 SEXP MultiAddEvalSumKeys__(SEXP cc_xp, SEXP map1_xp, SEXP map2_xp, std::string key_tag);
 extern "C" SEXP _openfhe_R_MultiAddEvalSumKeys__(SEXP cc_xp, SEXP map1_xp, SEXP map2_xp, SEXP key_tag) {
   BEGIN_CPP11
     return cpp11::as_sexp(MultiAddEvalSumKeys__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(map1_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(map2_xp), cpp11::as_cpp<cpp11::decay_t<std::string>>(key_tag)));
   END_CPP11
 }
-// pke_multi_eval_keys_9113.cpp
+// pke_multi_eval_keys.cpp
 SEXP MultiAddEvalAutomorphismKeys__(SEXP cc_xp, SEXP map1_xp, SEXP map2_xp, std::string key_tag);
 extern "C" SEXP _openfhe_R_MultiAddEvalAutomorphismKeys__(SEXP cc_xp, SEXP map1_xp, SEXP map2_xp, SEXP key_tag) {
   BEGIN_CPP11
     return cpp11::as_sexp(MultiAddEvalAutomorphismKeys__(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(map1_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(map2_xp), cpp11::as_cpp<cpp11::decay_t<std::string>>(key_tag)));
   END_CPP11
 }
-// pke_multi_eval_keys_9113.cpp
+// pke_multi_eval_keys.cpp
 SEXP CryptoContext__GetEvalSumKeyMap(std::string key_tag);
 extern "C" SEXP _openfhe_R_CryptoContext__GetEvalSumKeyMap(SEXP key_tag) {
   BEGIN_CPP11
     return cpp11::as_sexp(CryptoContext__GetEvalSumKeyMap(cpp11::as_cpp<cpp11::decay_t<std::string>>(key_tag)));
   END_CPP11
 }
-// pke_multi_eval_keys_9113.cpp
+// pke_multi_eval_keys.cpp
 SEXP CryptoContext__GetEvalAutomorphismKeyMapPtr(std::string key_tag);
 extern "C" SEXP _openfhe_R_CryptoContext__GetEvalAutomorphismKeyMapPtr(SEXP key_tag) {
   BEGIN_CPP11
     return cpp11::as_sexp(CryptoContext__GetEvalAutomorphismKeyMapPtr(cpp11::as_cpp<cpp11::decay_t<std::string>>(key_tag)));
   END_CPP11
 }
-// pke_multi_eval_keys_9113.cpp
+// pke_multi_eval_keys.cpp
 void CryptoContext__InsertEvalSumKey(SEXP map_xp, std::string key_tag);
 extern "C" SEXP _openfhe_R_CryptoContext__InsertEvalSumKey(SEXP map_xp, SEXP key_tag) {
   BEGIN_CPP11
@@ -2460,7 +2460,7 @@ extern "C" SEXP _openfhe_R_CryptoContext__InsertEvalSumKey(SEXP map_xp, SEXP key
     return R_NilValue;
   END_CPP11
 }
-// pke_multi_eval_keys_9113.cpp
+// pke_multi_eval_keys.cpp
 void CryptoContext__InsertEvalAutomorphismKey(SEXP map_xp, std::string key_tag);
 extern "C" SEXP _openfhe_R_CryptoContext__InsertEvalAutomorphismKey(SEXP map_xp, SEXP key_tag) {
   BEGIN_CPP11
@@ -2714,28 +2714,28 @@ extern "C" SEXP _openfhe_R_Plaintext__SetIntVectorValue(SEXP pt_xp, SEXP value) 
     return R_NilValue;
   END_CPP11
 }
-// pke_secret_sharing_9114.cpp
+// pke_secret_sharing.cpp
 SEXP MultipartyDecryptLead__ct_vec(SEXP cc_xp, SEXP sk_xp, list ct_list);
 extern "C" SEXP _openfhe_R_MultipartyDecryptLead__ct_vec(SEXP cc_xp, SEXP sk_xp, SEXP ct_list) {
   BEGIN_CPP11
     return cpp11::as_sexp(MultipartyDecryptLead__ct_vec(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(sk_xp), cpp11::as_cpp<cpp11::decay_t<list>>(ct_list)));
   END_CPP11
 }
-// pke_secret_sharing_9114.cpp
+// pke_secret_sharing.cpp
 SEXP MultipartyDecryptMain__ct_vec(SEXP cc_xp, SEXP sk_xp, list ct_list);
 extern "C" SEXP _openfhe_R_MultipartyDecryptMain__ct_vec(SEXP cc_xp, SEXP sk_xp, SEXP ct_list) {
   BEGIN_CPP11
     return cpp11::as_sexp(MultipartyDecryptMain__ct_vec(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(sk_xp), cpp11::as_cpp<cpp11::decay_t<list>>(ct_list)));
   END_CPP11
 }
-// pke_secret_sharing_9114.cpp
+// pke_secret_sharing.cpp
 SEXP CryptoContext__ShareKeys(SEXP cc_xp, SEXP sk_xp, int n_parties, int threshold, int index, std::string sharing_scheme);
 extern "C" SEXP _openfhe_R_CryptoContext__ShareKeys(SEXP cc_xp, SEXP sk_xp, SEXP n_parties, SEXP threshold, SEXP index, SEXP sharing_scheme) {
   BEGIN_CPP11
     return cpp11::as_sexp(CryptoContext__ShareKeys(cpp11::as_cpp<cpp11::decay_t<SEXP>>(cc_xp), cpp11::as_cpp<cpp11::decay_t<SEXP>>(sk_xp), cpp11::as_cpp<cpp11::decay_t<int>>(n_parties), cpp11::as_cpp<cpp11::decay_t<int>>(threshold), cpp11::as_cpp<cpp11::decay_t<int>>(index), cpp11::as_cpp<cpp11::decay_t<std::string>>(sharing_scheme)));
   END_CPP11
 }
-// pke_secret_sharing_9114.cpp
+// pke_secret_sharing.cpp
 SEXP CryptoContext__RecoverSharedKey(SEXP cc_xp, SEXP share_map_xp, int n_parties, int threshold, std::string sharing_scheme);
 extern "C" SEXP _openfhe_R_CryptoContext__RecoverSharedKey(SEXP cc_xp, SEXP share_map_xp, SEXP n_parties, SEXP threshold, SEXP sharing_scheme) {
   BEGIN_CPP11
@@ -2850,14 +2850,14 @@ extern "C" SEXP _openfhe_R_ReleaseAllContexts() {
     return R_NilValue;
   END_CPP11
 }
-// pke_sum_key_serial_9120.cpp
+// pke_sum_key_serial.cpp
 bool Serialize__EvalSumKey(std::string filename, bool binary, std::string key_tag);
 extern "C" SEXP _openfhe_R_Serialize__EvalSumKey(SEXP filename, SEXP binary, SEXP key_tag) {
   BEGIN_CPP11
     return cpp11::as_sexp(Serialize__EvalSumKey(cpp11::as_cpp<cpp11::decay_t<std::string>>(filename), cpp11::as_cpp<cpp11::decay_t<bool>>(binary), cpp11::as_cpp<cpp11::decay_t<std::string>>(key_tag)));
   END_CPP11
 }
-// pke_sum_key_serial_9120.cpp
+// pke_sum_key_serial.cpp
 bool Deserialize__EvalSumKey(std::string filename, bool binary);
 extern "C" SEXP _openfhe_R_Deserialize__EvalSumKey(SEXP filename, SEXP binary) {
   BEGIN_CPP11

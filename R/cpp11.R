@@ -996,6 +996,30 @@ CryptoContext__GetScalingFactorReal <- function(cc_xp, level) {
   .Call(`_openfhe_R_CryptoContext__GetScalingFactorReal`, cc_xp, level)
 }
 
+MakeCKKSPackedPlaintext__complex <- function(cc_xp, values_complex, noise_scale_deg, level, slots) {
+  .Call(`_openfhe_R_MakeCKKSPackedPlaintext__complex`, cc_xp, values_complex, noise_scale_deg, level, slots)
+}
+
+Plaintext__GetCKKSPackedValue <- function(pt_xp) {
+  .Call(`_openfhe_R_Plaintext__GetCKKSPackedValue`, pt_xp)
+}
+
+CryptoContext__FindAutomorphismIndex <- function(cc_xp, idx) {
+  .Call(`_openfhe_R_CryptoContext__FindAutomorphismIndex`, cc_xp, idx)
+}
+
+CryptoContext__FindAutomorphismIndices <- function(cc_xp, idx_list) {
+  .Call(`_openfhe_R_CryptoContext__FindAutomorphismIndices`, cc_xp, idx_list)
+}
+
+CryptoContext__EvalAutomorphismKeyGen <- function(cc_xp, sk_xp, idx_list) {
+  .Call(`_openfhe_R_CryptoContext__EvalAutomorphismKeyGen`, cc_xp, sk_xp, idx_list)
+}
+
+EvalAutomorphism__ <- function(ct_xp, idx, map_xp) {
+  .Call(`_openfhe_R_EvalAutomorphism__`, ct_xp, idx, map_xp)
+}
+
 EvalPolyLinear__ <- function(ct_xp, coefficients) {
   .Call(`_openfhe_R_EvalPolyLinear__`, ct_xp, coefficients)
 }
@@ -1026,30 +1050,6 @@ EvalFastRotationExt__ <- function(ct_xp, index, precomp_xp, add_first) {
 
 EvalFastRotation__3arg <- function(ct_xp, index, precomp_xp) {
   .Call(`_openfhe_R_EvalFastRotation__3arg`, ct_xp, index, precomp_xp)
-}
-
-MakeCKKSPackedPlaintext__complex <- function(cc_xp, values_complex, noise_scale_deg, level, slots) {
-  .Call(`_openfhe_R_MakeCKKSPackedPlaintext__complex`, cc_xp, values_complex, noise_scale_deg, level, slots)
-}
-
-Plaintext__GetCKKSPackedValue <- function(pt_xp) {
-  .Call(`_openfhe_R_Plaintext__GetCKKSPackedValue`, pt_xp)
-}
-
-CryptoContext__FindAutomorphismIndex <- function(cc_xp, idx) {
-  .Call(`_openfhe_R_CryptoContext__FindAutomorphismIndex`, cc_xp, idx)
-}
-
-CryptoContext__FindAutomorphismIndices <- function(cc_xp, idx_list) {
-  .Call(`_openfhe_R_CryptoContext__FindAutomorphismIndices`, cc_xp, idx_list)
-}
-
-CryptoContext__EvalAutomorphismKeyGen <- function(cc_xp, sk_xp, idx_list) {
-  .Call(`_openfhe_R_CryptoContext__EvalAutomorphismKeyGen`, cc_xp, sk_xp, idx_list)
-}
-
-EvalAutomorphism__ <- function(ct_xp, idx, map_xp) {
-  .Call(`_openfhe_R_EvalAutomorphism__`, ct_xp, idx, map_xp)
 }
 
 KeySwitchDown__ <- function(ct_xp) {
@@ -1284,18 +1284,6 @@ Compress__ct <- function(ct_xp, towers_left, noise_scale_deg) {
   .Call(`_openfhe_R_Compress__ct`, ct_xp, towers_left, noise_scale_deg)
 }
 
-CryptoContext__InsertEvalMultKey <- function(eval_key_list, key_tag) {
-  invisible(.Call(`_openfhe_R_CryptoContext__InsertEvalMultKey`, eval_key_list, key_tag))
-}
-
-CryptoContext__ClearEvalMultKeys__tag <- function(key_tag) {
-  invisible(.Call(`_openfhe_R_CryptoContext__ClearEvalMultKeys__tag`, key_tag))
-}
-
-CryptoContext__ClearEvalAutomorphismKeys__tag <- function(key_tag) {
-  invisible(.Call(`_openfhe_R_CryptoContext__ClearEvalAutomorphismKeys__tag`, key_tag))
-}
-
 CryptoContext__GetAllEvalMultKeys <- function() {
   .Call(`_openfhe_R_CryptoContext__GetAllEvalMultKeys`)
 }
@@ -1310,6 +1298,18 @@ CryptoContext__GetAllEvalAutomorphismKeys <- function() {
 
 CryptoContext__GetAllEvalSumKeys <- function() {
   .Call(`_openfhe_R_CryptoContext__GetAllEvalSumKeys`)
+}
+
+CryptoContext__InsertEvalMultKey <- function(eval_key_list, key_tag) {
+  invisible(.Call(`_openfhe_R_CryptoContext__InsertEvalMultKey`, eval_key_list, key_tag))
+}
+
+CryptoContext__ClearEvalMultKeys__tag <- function(key_tag) {
+  invisible(.Call(`_openfhe_R_CryptoContext__ClearEvalMultKeys__tag`, key_tag))
+}
+
+CryptoContext__ClearEvalAutomorphismKeys__tag <- function(key_tag) {
+  invisible(.Call(`_openfhe_R_CryptoContext__ClearEvalAutomorphismKeys__tag`, key_tag))
 }
 
 MultiEvalAutomorphismKeyGen__ <- function(cc_xp, sk_xp, map_xp, index_list, key_tag) {
